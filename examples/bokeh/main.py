@@ -3,7 +3,7 @@ Geometric patterns and bokeh.
 
 Write a standalone servable Bokeh app that draws exciting geometric patterns.
 
-To run: `$ bokeh serve --show bokeh_spirograph.py`
+To run: `$ bokeh serve . --show`
 
 Inspiration: https://github.com/bokeh/bokeh/blob/branch-2.4/examples/app/sliders.py
 and https://demo.bokeh.org/sliders.
