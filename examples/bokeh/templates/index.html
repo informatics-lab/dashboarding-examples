@@ -1,0 +1,12 @@
+{% extends base %}
+
+<!-- html head contents -->
+{% block preamble %}
+<link href="bokeh/static/css/basic.css" rel="stylesheet">
+{% endblock %}
+
+<!-- html body contents -->
+{% block contents %}
+<h1>Geometric Patterns</h1>
+<div class="embed"> {{ embed(roots.plot) }} </div>
+{% endblock %}
