@@ -9,7 +9,7 @@ app = dash.Dash(__name__)
 
 
 def make_plot(n, m):
-    t = np.linspace(-m*n, m*n, n)
+    t = np.linspace(-m*np.pi, m*np.pi, n)
     r = t % n
     x = r * np.sin(t)
     y = r * np.cos(t)
