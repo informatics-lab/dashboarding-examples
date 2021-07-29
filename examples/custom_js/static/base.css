@@ -1,0 +1,43 @@
+html, body, div, span,
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: Helvetica, Arial, Sans-Serif;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+h1 {
+  font-size: 150%;
+  font-weight: bold;
+  padding: 20px;
+}
+form {
+  display: grid;
+}
+button {
+  margin-top: 15px;
+  width: max-content;
+}
+
+.main {
+  margin-left: 30px;
+}
+.controls {
+  display: grid;
+  float: left;
+}
+.plot {
+  display: grid;
+  padding-left: 20px;
+}
+.slider {
+  padding-bottom: 10px;
+}
+#spirograph {
+  border: 1px solid #334;
+}
