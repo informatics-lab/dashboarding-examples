@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Spirograph Plot</title>
+    <link rel="icon" type="image/png" href="static/favicon.png">
+
+    <link rel="stylesheet" href="static/base.css">
+    <script src="script/jquery-3.6.0.min.js"></script>
+    <script type="module" src="script/interact.js"></script>
+</head>
+<body>
+    <h1>Spirograph Plot</h1>
+    <div class="main">
+        <div class="controls">
+            <label for="nValue">n:</label>
+            <input type="range" id="nValue" min="5" max="100" value="50" class="slider">
+
+            <label for="mValue">m:</label>
+            <input type="range" id="mValue" min="1" max="50" value="25" class="slider">
+
+            <label for="rnValue">rn:</label>
+            <input type="range" id="rnValue" min="1.0" max="5.0" value="3.0" step="0.1" class="slider">
+
+            <label for="rmValue">rm:</label>
+            <input type="range" id="rmValue" min="1.0" max="5.0" value="2.0" step="0.1" class="slider">
+
+            <input type="button" value="Submit" id="trigger">
+        </div>
+        <div class="plot">
+            <canvas id="spirograph" width=600 height=600></canvas>
+        </div>
+    </div>
+</body>
+</html>
