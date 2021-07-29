@@ -1,11 +1,18 @@
+import os
+
 import numpy as np
 
 from tornado.escape import json_decode
 import tornado.ioloop
-import tornado.web
+from tornado.web import RequestHandler, StaticFileHandler
 
 
-class SpirographHandler(tornado.web.RequestHandler):
+class MainHandler(RequestHandler):
+    def get(self):
+        self.render('index.html')
+
+
+class SpirographHandler(RequestHandler):
     def set_default_headers(self):
         """
         If running both server and client locally, you need to enable CORS requests.
@@ -51,6 +58,12 @@ class SpirographHandler(tornado.web.RequestHandler):
         return {"x": list(xp.reshape(-1)), "y": list(yp.reshape(-1))}
 
 
+settings = {
+    "static_path": os.path.join(os.path.dirname(__file__), "static"),
+    "script_path": os.path.join(os.path.dirname(__file__), "script"),
+}
+
+
 def make_app():
     """
     Make a tornado web application to run as a web server.
@@ -61,8 +74,10 @@ def make_app():
 
     """
     return tornado.web.Application([
+        (r"/", MainHandler),
         (r"/plot", SpirographHandler),
-    ])
+        (r'/script/(.*)', StaticFileHandler, {'path': settings["script_path"]}),
+    ], **settings)
 
 
 if __name__ == "__main__":

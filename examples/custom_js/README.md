@@ -4,7 +4,7 @@ An example of producing a simple webpage that uses custom JavaScript to create a
 
 ## Overview
 
-This example is composed of two parts: a webpage frontend that displays a plot and a Python server backend that calculates the values for a spirograph plot.
+This example application is composed of two parts: a webpage frontend that displays a spirograph plot and a Python (webserver) backend that calculates the values for the plot.
 
 The webpage is a simple html page, with CSS for styling and JavaScript for interacting with the Python server, and producing the spirograph plot. The JavaScript code makes use of the [JQuery](https://jquery.com/) library to simplify interactions with the webpage and making the POST request to the Python server.
 
@@ -16,32 +16,18 @@ The JavaScript code on the website makes a POST request to the Python server, su
 
 ## Usage
 
-### Python server
-
-To run the Python server part of this demo you will need a Python environment containing `tornado` and `NumPy`. For example:
+The whole application (web frontend and Python backend) is served from the Python tornado webserver. To run this you will need a Python environment containing `tornado` and `NumPy`. For example:
 
 ```bash
 conda install -c conda-forge tornado numpy
 ```
 
-To run the server:
+To run the webserver and serve the application:
 
 ```
 python backend.py
 ```
 
-This will run the Python server at `http://localhost:8000/plot`, which is referenced in the JavaScript code.
+This will run the Python server at `http://localhost:8000`.
 
-### (Optional) Web frontend
-
-The example runs best if you _also_ serve the webpage frontend using a simple http server such as the [http-server](https://www.npmjs.com/package/http-server) node package (see link for install instructions, which assume you have already installed [NPM](https://www.npmjs.com/); the Node Package Manager).
-
-For example:
-
-```bash
-npx http-server --cors="*" .
-```
-
-You can then navigate to the web frontend at `http://localhost:8080`.
-
-Note the `--cors="*"` flag when running the http server. For security reasons the JavaScript code is blocked from accessing other resources on other servers (we have one for the frontend and one for the backend) on the same host (`localhost`). For more information see this Mozilla developer page on [HTTP Access Control (CORS)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS/Errors/CORSMissingAllowOrigin).
+The endpoint for the Python backend that calculates the points for the plot is at `http://localhost:8000/plot`. This is referenced in the JavaScript code.
