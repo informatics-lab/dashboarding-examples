@@ -6,6 +6,7 @@ p, blockquote, pre, a {
   border: 0;
   font-size: 100%;
   font-family: Helvetica, Arial, Sans-Serif;
+  color: #334;
   vertical-align: baseline;
 }
 body {
@@ -20,8 +21,8 @@ form {
   display: grid;
 }
 button {
-  margin-top: 15px;
   width: max-content;
+  color: #334;
 }
 
 .main {
@@ -30,14 +31,28 @@ button {
 .controls {
   display: grid;
   float: left;
+  padding-right: 20px;
 }
 .plot {
   display: grid;
-  padding-left: 20px;
-}
-.slider {
-  padding-bottom: 10px;
+  border: 1px solid #334;
+  width: 600px;
+  height: 600px;
 }
 #spirograph {
-  border: 1px solid #334;
+  width: 100%;
+}
+.singleControl {
+  display: inline-flex;
+  padding-bottom: 1.1em;
+}
+.singleControl label {
+  display: table-column;
+  padding-top: 0.25em;
+}
+.sliderHolder {
+  margin-left: 1em;
+}
+.sliderValue {
+  padding-left: 3px;
 }

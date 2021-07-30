@@ -7,7 +7,8 @@
 
     <link rel="stylesheet" href="static/base.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="script/interact.js"></script>
+    <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+    <script src="script/canvasjsinteract.js"></script>
 </head>
 <body>
     <h1>Spirograph Plot</h1>
@@ -48,8 +49,8 @@
             <button type="button" id="trigger">Submit</button>
         </div>
         <div class="plot">
-            <canvas id="spirograph" width=600 height=600></canvas>
-        </div>
+            <div id="spirograph"></div>
+        </div> 
     </div>
 </body>
 </html>
