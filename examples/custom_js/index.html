@@ -13,19 +13,39 @@
     <h1>Spirograph Plot</h1>
     <div class="main">
         <div class="controls">
-            <label for="nValue">n:</label>
-            <input type="range" id="nValue" min="5" max="100" value="50" class="slider">
+            <div class="singleControl">
+                <label for="nRange">n:</label>
+                <div class="sliderHolder">
+                    <input type="range" id="nRange" min="5" max="100" value="50" class="slider">
+                    <p class="sliderValue" id="nValue"></p>
+                </div>
+            </div>
 
-            <label for="mValue">m:</label>
-            <input type="range" id="mValue" min="1" max="50" value="25" class="slider">
+            <div class="singleControl">
+                <label for="mRange">m:</label>
+                <div class="sliderHolder">
+                    <input type="range" id="mRange" min="1" max="50" value="25" class="slider">
+                    <p class="sliderValue" id="mValue"></p>
+                </div>
+            </div>
 
-            <label for="rnValue">rn:</label>
-            <input type="range" id="rnValue" min="1.0" max="5.0" value="3.0" step="0.1" class="slider">
+            <div class="singleControl">
+                <label for="rnRange">rn:</label>
+                <div class="sliderHolder">
+                    <input type="range" id="rnRange" min="1.0" max="5.0" value="3.0" step="0.1" class="slider">
+                    <p class="sliderValue" id="rnValue"></p>
+                </div>
+            </div>
 
-            <label for="rmValue">rm:</label>
-            <input type="range" id="rmValue" min="1.0" max="5.0" value="2.0" step="0.1" class="slider">
+            <div class="singleControl">
+                <label for="rmRange">rm:</label>
+                <div class="sliderHolder">
+                    <input type="range" id="rmRange" min="1.0" max="5.0" value="2.0" step="0.1" class="slider">
+                    <p class="sliderValue" id="rmValue"></p>
+                </div>
+            </div>
 
-            <input type="button" value="Submit" id="trigger">
+            <button type="button" id="trigger">Submit</button>
         </div>
         <div class="plot">
             <canvas id="spirograph" width=600 height=600></canvas>
