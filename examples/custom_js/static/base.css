@@ -31,13 +31,17 @@ button {
 .controls {
   display: grid;
   float: left;
+  padding-right: 20px;
 }
 .plot {
   display: grid;
-  padding-left: 20px;
+  border: 1px solid #334;
+  width: 600px;
+  height: 600px;
 }
-/* .slider {
-} */
+#spirograph {
+  width: 100%;
+}
 .singleControl {
   display: inline-flex;
   padding-bottom: 1.1em;
@@ -51,7 +55,4 @@ button {
 }
 .sliderValue {
   padding-left: 3px;
-}
-#spirograph {
-  border: 1px solid #334;
 }
