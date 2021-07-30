@@ -29,22 +29,6 @@ $( document ).ready( function() {
     })
 });
 
-// function drawChart( xVals, yVals ) {
-//     data: [
-// 		{
-// 		type: "line", //change it to column, spline, line, pie, etc
-// 		dataPoints: [
-// 			{ x: 10, y: 10 },
-// 			{ x: 20, y: 14 },
-// 			{ x: 30, y: 18 },
-// 			{ x: 40, y: 22 },
-// 			{ x: 50, y: 18 },
-// 			{ x: 60, y: 28 }
-// 		]
-// 	}
-// 	]
-// }
-
 
 function drawChart(xVals, yVals) {
     let data = [];
@@ -54,7 +38,6 @@ function drawChart(xVals, yVals) {
             y: yVals[i]
         });
     }
-    console.log(data)
     let options = {
         animationEnabled: false,
         axisX: {
