@@ -1,7 +1,9 @@
+from concurrent.futures import ThreadPoolExecutor
 import os
 
 import numpy as np
 
+from tornado.concurrent import run_on_executor
 from tornado.escape import json_decode
 import tornado.ioloop
 from tornado.web import RequestHandler, StaticFileHandler
@@ -13,6 +15,9 @@ class MainHandler(RequestHandler):
 
 
 class SpirographHandler(RequestHandler):
+    def initialize(self):
+        self.executor = ThreadPoolExecutor(max_workers=1)
+
     def set_default_headers(self):
         """
         If running both server and client locally, you need to enable CORS requests.
@@ -25,7 +30,7 @@ class SpirographHandler(RequestHandler):
         self.set_header("Access-Control-Allow-Headers", "x-requested-with")
         self.set_header('Access-Control-Allow-Methods', 'POST')
 
-    def post(self):
+    async def post(self):
         """
         Handle a POST request.
 
@@ -35,10 +40,11 @@ class SpirographHandler(RequestHandler):
         """
         self.args = json_decode(self.request.body)
         print(f"Decoded args: {self.args}")
-        plot_dict = self.spirograph()
+        plot_dict = await self.spirograph()
         self.write(plot_dict)
         self.flush()
 
+    @run_on_executor()
     def spirograph(self):
         """Make x and y values for a spirograph plot."""
         n = self.args["n"]
